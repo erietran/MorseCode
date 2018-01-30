@@ -14,9 +14,9 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        mtextView.movementMethod = ScrollingMovementMethod()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        mtextView.movementMethod = ScrollingMovementMethod()
         testButton.setOnClickListener { view ->
             appendTextAndScroll(inputText.text.toString());
             hideKeyboard();
