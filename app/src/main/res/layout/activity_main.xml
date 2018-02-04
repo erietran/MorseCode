@@ -11,24 +11,24 @@
         android:id="@+id/inputText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginBottom="11dp"
+        android:layout_marginStart="17dp"
         android:ems="10"
         android:hint="Enter Text Here"
         android:inputType="text"
         android:singleLine="true"
         android:text="Enter Text Here"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/testButton"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/testButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginStart="16dp"
         android:text="TEST"
-        app:layout_constraintStart_toStartOf="@+id/inputText"
-        app:layout_constraintTop_toTopOf="@+id/inputText" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/showButton"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/TextView"
@@ -43,10 +43,10 @@
         android:id="@+id/mtextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:background="#a9ffd4"
         android:fontFamily="monospace"
         android:gravity="bottom"
@@ -57,16 +57,25 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/testButton" />
+        app:layout_constraintTop_toBottomOf="@+id/transButton" />
 
     <Button
         android:id="@+id/showButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="8dp"
         android:text="Show Codes"
         app:layout_constraintBottom_toTopOf="@+id/mtextView"
-        app:layout_constraintEnd_toEndOf="@+id/inputText" />
+        app:layout_constraintStart_toEndOf="@+id/testButton" />
+
+    <Button
+        android:id="@+id/transButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="91dp"
+        android:text="Translate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity() {
             showCodes()
             hideKeyboard()
         }
+        transButton.setOnClickListener{
+            appendTextAndScroll(translate((inputText.text.toString()).toLowerCase()))
+            hideKeyboard()
+        }
     }
 
 
@@ -76,6 +80,37 @@ class MainActivity : AppCompatActivity() {
     fun Context.hideKeyboard(view: View){
         val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+    }
+
+    fun translate(text: String) : String{
+        var newString = ""
+        var morseBool = false
+        val morseChecker = text.split(' ', limit = 0)
+        for(k : String? in morseChecker) {
+            if (codeToLetDict.containsKey(k))
+                if (k != "/")
+                    morseBool = true
+        }
+        if(morseBool){
+            for(k : String? in morseChecker) {
+                if (codeToLetDict.containsKey(k))
+                    newString = newString.plus(codeToLetDict.get(k))
+                else
+                    newString = newString.plus("?")
+            }
+        }
+        else
+            for(i in text.indices){
+                if (text[i] == ' ')
+                    newString = newString.plus("/ ")
+                else if(letToCodeDict.containsKey(text[i].toString())) {
+                    newString = newString.plus(letToCodeDict.get(text[i].toString()) + " ")
+                }
+                else
+                    newString = newString.plus("? ")
+            }
+
+    return newString
     }
 }
 
