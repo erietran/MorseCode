@@ -78,4 +78,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/playImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/showButton"
+        app:layout_constraintTop_toTopOf="@+id/showButton"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
 </android.support.constraint.ConstraintLayout>
